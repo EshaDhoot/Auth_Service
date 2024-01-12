@@ -9,7 +9,7 @@ const ApiRoutes = require('./routes/index');
 
 const app = express();
 
-const prepareAndStartServer = async () => {
+const prepareAndStartServer = () => {
     
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));

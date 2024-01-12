@@ -80,10 +80,20 @@ class UserService {
         try {
             return bcrypt.compareSync(userInputPlainPassword, encryptedPassword);
         } catch (error) {
-            console.log("Something went worng in password comparison");
+            console.log("Something went wrong in password comparison");
             throw error;
         }
     }
+
+    isAdmin(userId) {
+        try {
+            return this.userRepository.isAdmin(userId);
+        } catch (error) {
+            console.log("Something went wrong in service layer");
+            throw error;
+        }
+    }
+
 }
 
 module.exports = UserService;
